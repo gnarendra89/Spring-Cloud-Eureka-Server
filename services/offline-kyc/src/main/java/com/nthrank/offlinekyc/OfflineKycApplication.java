@@ -6,7 +6,8 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 @SpringBootApplication
-@EnableEurekaClient
+@EnableEurekaClient // Eureka dependent only
+// or @EnableDiscoveryClient, for various other discovery frameworks like consul, zookeeper etc
 public class OfflineKycApplication {
 
 	public static void main(String[] args) {
