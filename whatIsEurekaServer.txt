@@ -1,6 +1,6 @@
 Netflix's Eureka Server is a SERVICE DISCOVERY application which holds information about registered client applications.
 
-In other words, Every Micro service will register itself into the Eureka server and Eureka server knows all the client applications running on each PORT and IP ADDRESS. This way Port and IP Address TIGHT COUPLING is removed, how? Read On...
+In other words, Every Micro service will register itself(as client) into the Eureka server and server will know all the client applications running on each PORT and IP ADDRESS. This way Port and IP Address TIGHT COUPLING is removed, how? Read On...
 
 Traditional way of calling a microservice end-point from another microservice :
 e.g :
