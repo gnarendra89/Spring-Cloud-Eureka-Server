@@ -1,0 +1,20 @@
+Netflix's Eureka Server is a SERVICE DISCOVERY application which holds information about registered client applications.
+
+In other words, Every Micro service will register itself into the Eureka server and Eureka server knows all the client applications running on each PORT and IP ADDRESS. This way Port and IP Address TIGHT COUPLING is removed, how? Read On...
+
+Traditional way of calling a microservice end-point from another microservice :
+e.g :
+String url = "http://localhost:8080/api/end/point";
+
+Each micro service have a name associated with it(using spring.application.name=MICROSERVICENAME). A client microservice can simply use this name along with the end-point to call registered MICROSERVICENAME particular API.
+e.g :
+String url = "http://MICROSERVICENAME/api/end/point";
+
+Hence, even if this MICROSERVICENAME host(IP Address) or Port changes, there will not be any change in client application(Eureka server will handle it since MICROSERVICENAME is registered with it)
+
+Default Eureka Server port 8761.
+
+By default, the Eureka Server registers itself into the discovery. So, in order to make it a server we need to disable it as client as below:
+
+eureka.client.registerWithEureka = false
+eureka.client.fetchRegistry = false
